@@ -28,7 +28,9 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <ThemeProvider storageKey="vite-ui-theme">{children}</ThemeProvider>
+        <ThemeProvider defaultTheme="system" storageKey="next-theme">
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );
