@@ -1,7 +1,8 @@
+"use client";
 import { useEffect } from "react";
 import { IconCheck, IconMoon, IconSun } from "@tabler/icons-react";
 import { cn } from "@/lib/utils";
-import { useTheme } from "@/app/context/theme-context";
+import { useTheme } from "@/context/theme-context";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,

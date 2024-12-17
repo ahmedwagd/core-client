@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import { cn } from "@/lib/utils";
 import { Separator } from "@/components/ui/separator";
@@ -14,7 +15,7 @@ export const Header = React.forwardRef<React.ElementRef<"header">, HeaderProps>(
     React.useEffect(() => {
       const onScroll = () => {
         setOffset(
-          document.body.scrollTop || document.documentElement.scrollTop
+          document.body.scrollTop || document.documentElement.scrollTop,
         );
       };
 
@@ -29,10 +30,10 @@ export const Header = React.forwardRef<React.ElementRef<"header">, HeaderProps>(
       <header
         ref={ref}
         className={cn(
-          "flex items-center gap-3 sm:gap-4 bg-background p-4 h-16",
+          "flex h-16 items-center gap-3 bg-background p-4 sm:gap-4",
           sticky && "sticky top-0 z-20",
           offset > 10 && sticky ? "shadow" : "shadow-none",
-          className
+          className,
         )}
         {...props}
       >
@@ -41,6 +42,6 @@ export const Header = React.forwardRef<React.ElementRef<"header">, HeaderProps>(
         {children}
       </header>
     );
-  }
+  },
 );
 Header.displayName = "Header";
